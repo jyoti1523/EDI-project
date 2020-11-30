@@ -1,0 +1,306 @@
+
+
+<?php
+
+session_start();
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+{
+    header("location: login.php");
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prakalp</title>
+	<style type="text/css">
+		
+     
+		body{
+			background: black;
+		}
+
+		.contact{
+			color: #d9d9d9;
+			font-size: 33px;
+			
+			font-family: Sans-serif;
+			padding: 20px 30px 30px 30px;
+			margin: 30px 30px 30px 30px;
+		}
+		.contactus img{
+			padding:30px 30px 30px 30px;
+			border-radius: 50px 50px 50px 50px ;
+		}
+		
+		.about{
+			background:linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('pictures/about.jpg');
+			background-size: cover;
+			padding:30px 30px 100px 30px;
+			color: #d9d9d9;
+			font-size: 30px;
+			font-family: Sans-serif;
+			margin-top: 50px;
+			margin-bottom: 150px;
+
+		}
+		.aboutlogo{
+			border-radius: 50%;
+			padding: 40px 40px 40px 40px;
+		}
+		.textabout{
+			padding-left: 50px;
+
+			
+		}
+
+		.tour{
+			color: #d9d9d9;
+			font-family: sans-serif;
+			font-size: 33px;
+			margin-top:50px;
+			margin-bottom: 150px;
+
+		}
+
+		.video{
+			border-style: solid;
+			border-color: #d9d9d9;
+			border-width: 2px;
+
+		}
+
+		div.gallery {
+  			margin: 5px;
+  			border: 10px groove transparent;
+  			float: left;
+  			width:245px;
+		}
+
+		div.gallery:hover {
+  			border-width: 1px;
+  			border-color: #f2f2f2;
+		}
+
+		div.gallery img {
+  			width: 100%;
+  			height: 200px;
+  				}
+				div.desc {
+  			padding: 15px;
+  			text-align: center;
+  			text-shadow: 1px 1px;
+  			color: #d9d9d9;
+		}
+		div.logo{
+			color: #d9d9d9;
+			font-size: 60px;
+			font-family: sans-serif;
+			
+		}
+		.cornerlogo{
+			border-radius: 50%;
+		}
+		ul {
+  			list-style-type: none;
+  			margin: 0;
+  			padding: 0;
+  			overflow: hidden;
+  			background-color: #333;
+
+		}
+
+		li {
+  			float: right;
+		}
+
+		li a {
+  			display: block;
+  			color: white;
+  			font-size: 20px;
+  			font-family: sans-serif;
+  			text-align: center;
+  			padding: 14px 30px;
+  			text-decoration: none;
+
+		}
+
+/* Change the link color to #111 (black) on hover */
+		li a:hover {
+ 			 background-color: #111;
+		}
+
+		.home{
+			color: red;
+			overflow: auto;
+			margin-top:150px;
+			margin-bottom: 150px; 
+
+		}
+		.blind{
+			display: inline-block;
+			width: 24%;
+			height: 200px;
+			background-color: black;
+			font-family: sans-serif;
+			font-size: 46px;
+			color: black;
+			border:3px groove transparent;
+			background-image: linear-gradient( rgba(217, 22, 116, 0.4), rgba(226, 44, 83, 0.9) ), url('pictures/blind.jpeg');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			padding-right: 14px;
+			padding-left:14px; 
+		}
+		.blind:hover{
+			font-size: 56px;
+		}
+
+		.deaf{
+			display: inline-block;
+			width:24%;
+			height: 200px;
+			background-color: black;
+			font-family: sans-serif;
+			font-size: 46px;
+			color: black;
+			border:3px groove transparent;
+			background-image: linear-gradient( rgba(50, 4, 253, 0.4), rgba(153, 7, 250, 0.9) ), url('pictures/handi.jpg');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			padding-right: 14px;
+			padding-left:14px; 
+		}
+		.deaf:hover{
+			font-size: 56px;
+		}
+
+		.dumb{
+			display: inline-block;
+			width: 24%;
+			height: 200px;
+			background-color: black;
+			font-family: sans-serif;
+			font-size: 46px;
+			color: black;
+			border:3px groove transparent;
+			background-image: linear-gradient( rgba(217, 200, 22, 0.5), rgba(217, 200, 22, 0.9) ), url('pictures/handi.jpg');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			padding-right: 14px;
+			padding-left:14px; 
+		}
+		.dumb:hover{
+			font-size: 56px;
+		}
+		.handi{
+			display: inline-block;
+			width: 24%;
+			height: 200px;
+			background-color: black;
+			font-family: sans-serif;
+			font-size: 46px;
+			color: black;
+			border:3px groove transparent;
+			background-image: linear-gradient( rgba(65, 214, 34, 0.5), rgba(71, 193, 45, 0.9) ), url('pictures/handi.jpg');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			padding-right: 14px;
+			padding-left:14px; 
+
+		}
+		.handi:hover{
+			font-size: 56px;
+		}
+
+		
+
+		
+
+		
+	
+	</style>
+</head>
+<body>
+
+<div>
+	
+	
+
+	
+  <li >
+        <a class="nav-link" href="#">Profile <img src="https://img.icons8.com/metro/26/000000/guest-male.png"></a>
+      </li>
+ 
+
+
+		<li><a  href="register.php">Logout</a></li>
+		<li><a href="#contact">Contact us</a></li>
+		<li><a href="#about">About</a></li>
+		
+      </li>
+		
+		<li><a href="#home">Home</a></li>
+	</ul>
+</div>
+
+<div class="logo"><img class="cornerlogo" src="pictures/prakalp.png" height="100" width="100" alt="Avatar">Prakalp</div>	
+
+</nav>
+
+<div id="home" class="home">
+	
+	
+	<a href="branch_selection.html"><button type="button" class="blind">First Year</button></a>
+	<a href="branch_selection.html"><button type="button" class="deaf" onclick="branch_selection.html">Second Year</button></a>
+	<a href="branch_selection.html"><button  type="button" class="dumb"  onclick="branch_selection.html">Third Year</button></a>
+	<a href="branch_selection.html"><button  type="button" class="handi" onclick="branch_selection.html">Fourth Year</button></a>
+	
+</div>
+
+
+</section>
+
+
+
+<section id="about" class="about">
+	<center><h3>About</h3></center>
+	
+	<img  class="aboutlogo" alt="Avatar" src="pictures/prakalp.png" height="200" width="200" align="left">
+	<div class="textabout">
+	Prakalps i.e. Projects helps us to become better learner and better engineer .The bridge between theoretical aspects and real world is project based Learning.Every year we have to do multiple projects and it is very hectic to fill multiple google forms ,Excel Sheets , Create Groups , Store PPTs,Reports ,Assessment ,etc n all stuff. There is chance of misplacing these documents .So Prakalp will provide You a centralized platform for sharing ,Storing all the stuff related to project in one single website.So that it will help for futher evaluation to teachers as well as for getting ideas and information of interesting topics easily. </div>
+</section>
+
+<section id="contact" class="contact">
+<center><h3>Contact us</h3></center>
+	<p>Want to help us or join us? share idea , feedback  and connect with people. Well, it's very simple! Just contact us on any platform.  </p>
+	<div class="contactus">
+		<center><a href="https://gmail.com" target="_blank">
+		<img src="pictures/gmail.png" height="80" width="80"></a>
+		<a href="https://instagram.com" target="_blank">
+		<img src="pictures/insta.jpeg" height="80" width="80"></a>
+		<a href="https://whatsapp.com" target="_blank">
+		<img src="pictures/wa.jpeg" height="80" width="80"></a>
+		<a href="https://youtube.com" target="_blank">
+		<img src="pictures/yt.png" height="80" width="80"></a>
+	</center>
+	</div>
+
+</section>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+  
+
+</body>
+</html> 
