@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submission portal</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body><style type="text/css">
+	/*div {
+  width: 800px;
+  height: 600px;
+  border: 2px solid green;
+  padding: 50px;
+  margin: 20px;
+  margin-left: 150px;
+  border-radius: 5px;
+}*/
+
+input[type="file"] { 
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+
+input:focus + label {
+  outline: 2px solid;
+}
+h1{
+	padding-left: 10px;
+}
+
+</style>
+
+
+
+	<div class="container my-3">
+        <h1>Please Upload your project details:</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Abstract</h5>
+                <div class="form-group">
+                    <textarea class="form-control" id="addTxt" rows="10"></textarea>
+                </div>
+                <button class="btn btn-primary" id="addBtn">Save</button>
+
+             <br>
+             <br>
+
+
+        <h1>FF18 From</h1>
+     
+      
+        <br>
+         <form>
+         	<div class="custom-file">
+			  <input type="file" id="file-upload" multiple required />
+			  <label for="file-upload">Upload file</label>
+			  <div id="file-upload-filename"></div>
+			</div>
+			</form>
+
+
+
+              
+            </div>
+
+               
+               <br>
+               <br>
+
+
+        <h1>IEEE Report</h1>
+        <br>
+          <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile"  name="file">
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+
+
+
+
+
+        </div>
+        <br>
+        <br>
+      
+      <div>
+        
+  <button type="submit" class="btn btn-primary" >Submit </button>
+      </div>
+
+        
+    </div>
+
+<script type="text/javascript">
+	
+
+
+	var input = document.getElementById( 'file-upload' );
+var infoArea = document.getElementById( 'file-upload-filename' );
+
+input.addEventListener( 'change', showFileName );
+
+function showFileName( event ) {
+  
+  // the change event gives us the input it occurred in 
+  var input = event.srcElement;
+  
+  // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+  var fileName = input.files[0].name;
+  
+  // use fileName however fits your app best, i.e. add it into a div
+  infoArea.textContent = 'File name: ' + fileName;
+}
+</script>
+
+
+
+	
+
+  <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+</body>
+</html>
